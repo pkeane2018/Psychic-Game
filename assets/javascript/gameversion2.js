@@ -1,12 +1,5 @@
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-function restart () {
-    var letter = alphabet[Math.floor(Math.random()*26)];
-    document.getElementbyId("guessesleft") = 9;
-    document.getElemenntbyId("guesses") = " ";
-    var win = false;
-}
-   
 document.onkeyup = function Game(event) {
     var newguess = event.key;
     var newguess = newguess.toLowerCase();
@@ -26,14 +19,20 @@ document.onkeyup = function Game(event) {
             winnum = winnum + 1;
             getElementbyID("wins".textContent = winnum);
             alert("You Win!")
-            reset();
+            var letter = alphabet[Math.floor(Math.random()*26)];
+            document.getElementbyId("guessesleft") = 9;
+            document.getElemenntbyId("guesses") = " ";
+            var win = false;
     }
         
     if (guessnum === 0) {
             lossnum = lossnum + 1;
             getElementbyID("losses".textContent = lossnum);
-            reset();
+            var letter = alphabet[Math.floor(Math.random()*26)];
+            document.getElementbyId("guessesleft") = 9;
+            document.getElemenntbyId("guesses") = " ";
+            var win = false;
     }
 }
 
-document.onkeyup = Game(event);
+document.onkeyup = Game( );
