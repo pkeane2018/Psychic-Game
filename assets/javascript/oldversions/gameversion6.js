@@ -6,7 +6,7 @@ document.onkeyup = function(event) {
     var letter = alphabet[Math.floor(Math.random()*26)];
     var lossnum = document.getElementById("losses").textContent;
     var winnum = document.getElementById("wins").textContent;;
-    while (win === false && guessnum > 0) {
+    if (win === false && guessnum > 0) {
                 var newguess = event.key;
                 var newguess = newguess.toLowerCase();
                 var foo = " ";
@@ -14,13 +14,15 @@ document.onkeyup = function(event) {
                     guessnum = parseInt(guessnum) - 1;
                     foo += newguess;
                     document.getElementById("guesses").innerHTML = foo;
+                    console.log(guessnum);
+                    document.getElementById("guessesleft").innerHTML = guessnum;
                   }  else if (newguess === letter) {
                         win = true;
                     }
                 }
                 
             
-        if (win === true) {
+    else if (win === true) {
                 winnum = parseInt(winnum) + 1;
                 document.getElementById("wins").textContent = winnum;
                 alert("You Win!")
@@ -31,7 +33,7 @@ document.onkeyup = function(event) {
                 var win = false;
         }
             
-        if (guessnum === 0) {
+    else if (guessnum === 0) {
                 lossnum = parseInt(lossnum) + 1;
                 document.getElementById("losses").textContent = lossnum;
                 var letter = alphabet[Math.floor(Math.random()*26)];
@@ -43,4 +45,3 @@ document.onkeyup = function(event) {
     
     
 }
-
