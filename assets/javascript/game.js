@@ -1,26 +1,26 @@
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-document.onkeyup = function(event) {
-    var guessnum = 9;
+
+var guessnum = 9;
+var lossnum = 0;
+var winnum = 0;
+
+document.onkeyup = function (event) {
     var win = false;
     var letter = alphabet[Math.floor(Math.random()*26)];
-    var lossnum = document.getElementById("losses").textContent;
-    var winnum = document.getElementById("wins").textContent;;
-    while (win === false && guessnum > 0) {
-                var newguess = event.key;
-                var newguess = newguess.toLowerCase();
-                var foo = " ";
-                if (newguess !== letter) { 
-                    guessnum = parseInt(guessnum) - 1;
-                    foo += newguess;
-                    document.getElementById("guesses").innerHTML = foo;
-                  }  else if (newguess === letter) {
-                        win = true;
-                    }
-                }
-                
-            
-        if (win === true) {
+    var newguess = event.key;
+    var newguess = newguess.toLowerCase();
+    if (win === false && guessnum > 0 && newguess !== letter ) {
+        guessnum = parseInt(guessnum) - 1;
+        var foo = " " + document.getElementById("guesses").innerHTML;
+        document.getElementById("guesses").innerHTML = foo += newguess + ", ";
+        document.getElementById("guessesleft").innerHTML = guessnum;
+        console.log(guessnum);
+        return guessnum;
+
+    }  else if (win === false && guessnum > 0 && newguess === letter) {
+                win = true
+                console.log(win);
                 winnum = parseInt(winnum) + 1;
                 document.getElementById("wins").textContent = winnum;
                 alert("You Win!")
@@ -31,7 +31,7 @@ document.onkeyup = function(event) {
                 var win = false;
         }
             
-        if (guessnum === 0) {
+    else if (guessnum === 0) {
                 lossnum = parseInt(lossnum) + 1;
                 document.getElementById("losses").textContent = lossnum;
                 var letter = alphabet[Math.floor(Math.random()*26)];
@@ -40,7 +40,5 @@ document.onkeyup = function(event) {
                 guessnum = 9;
                 var win = false;
         }
-    
-    
+     
 }
-

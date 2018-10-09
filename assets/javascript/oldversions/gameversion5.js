@@ -12,16 +12,17 @@ function game( ) {
                 var lossnum = document.getElementById("losses").textContent;
                 var winnum = document.getElementById("wins").textContent;
                 var foo = " ";
-                if (newguess !== letter) { 
+                if (newguess !== letter && guessnum > 0) { 
                         foo += newguess;
                         guessnum = guessnum - 1;
+                        console.log(guessnum);
                         document.getElementById("guesses").innerHTML = foo;
              }  else if (newguess === letter) {
                         win = true;
                     }
                 }
                 return guessnum;
-                console.log(guessnum);    
+                    
         }
             
     if (win === true) {
