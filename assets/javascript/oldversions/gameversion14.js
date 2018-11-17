@@ -22,41 +22,24 @@ function guess(event) {
     var newguess = event.key;
     var newguess = newguess.toLowerCase();
     console.log(newguess);
-    
-    if (win === false && newguess !== letter ) {
+    if (win === false && guessnum > 0 && newguess !== letter ) {
         guessnum = parseInt(guessnum) - 1;
         var foo = " " + document.getElementById("guesses").innerHTML;
         document.getElementById("guesses").innerHTML = foo += newguess + ", ";
         document.getElementById("guessesleft").innerHTML = guessnum;
         console.log(guessnum);
+        return guessnum;
 
-        if (guessnum == 0) {
-
-            lossnum = parseInt(lossnum) + 1;
-                console.log(lossnum);
-                document.getElementById("losses").textContent = " " + lossnum;
-                alert("Sorry. You lose.");
-                letter = alphabet[Math.floor(Math.random()*25)];
-                console.log(letter);
-                document.getElementById("guessesleft").innerHTML = " 9";
-                document.getElementById("guesses").innerHTML = " ";
-                guessnum = 9;
-                console.log(guessnum);
-                win = false;
-                console.log(win);
-
-        }
-
-    }  else if (win === false && newguess === letter) {
+    }  else if (win === false && guessnum > 0 && newguess === letter) {
                 win = true
                 console.log(win);
                 winnum = parseInt(winnum) + 1;
                 console.log(winnum);
-                document.getElementById("wins").textContent = " " + winnum;
+                document.getElementById("wins").textContent = winnum;
                 alert("You Win!")
                 letter = alphabet[Math.floor(Math.random()*25)];
                 console.log(letter);
-                document.getElementById("guessesleft").innerHTML = " 9";
+                document.getElementById("guessesleft").innerHTML = 9;
                 document.getElementById("guesses").innerHTML = " ";
                 guessnum = 9;
                 console.log(guessnum);
@@ -64,7 +47,21 @@ function guess(event) {
                 console.log(win);
         }
             
+    else if (guessnum === 0) {
+                lossnum = parseInt(lossnum) + 1;
+                console.log(lossnum);
+                document.getElementById("losses").textContent = lossnum;
+                letter = alphabet[Math.floor(Math.random()*25)];
+                console.log(letter);
+                document.getElementById("guessesleft").innerHTML = 9;
+                document.getElementById("guesses").innerHTML = " ";
+                guessnum = 9;
+                console.log(guessnum);
+                win = false;
+                console.log(win);
+        }
    }
 
 
 }
+
