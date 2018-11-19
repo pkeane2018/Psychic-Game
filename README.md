@@ -1,4 +1,4 @@
 # Psychic-Game
 In this game, a random letter is generated. The user types guesses on the keyboard, the program captures these key presses and compares each of them to the randomly generated letter. Each of these guesses is appended to a div. After 9 incorrect guesses, a message is displayed informing the user that he or she has lost and the the number of losses increases by 1, If the player types the randomly generated letter before using up 9 guesses, a message is displayed telling the user that he or she has won and the number of wins increases by 1. After the player either wins or loses, the div with guessed letters is cleared, the number of guesses left is reset to 9, and a new random letter is chosen. The player can continue to play, with the program keeping track of the number of wins and losses. 
 
-link to deployed Github site: 
+link to deployed Github site: https://pkeane2018.github.io/Psychic-Game/
