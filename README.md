@@ -7,7 +7,7 @@ The repository can be cloned by clicking the Clone or Download button on the mai
 ## Repository organization
 The main directory file contains the index.html file, Readme.md file, and the assets folder. Within the assets folder, there are two more subfolders - the 'css' and 'javascript' folders. The 'css' folde contains the style.css file, with determines how the html elements in the index.html file are styled, as well as reset.css, which contains code to ensure that the styling of the html elements appears consistent across different web browsers. Within the 'javascript' folder is game.js, which contains the code that determines the logic of the game, including generating random numbers and determining what happens in response to the user's behavior. Index.html contains all the html code for the site, as well as links to style.css, reset.css, game.js, and to the jQuery and CSS boostrap CDNs.
 
-## How to Play
+## How to play
 First, a random letter is generated. The user types guesses on the keyboard, the program captures these key presses and compares each of them to the randomly generated letter. Each of these guesses is appended to a div. After 9 incorrect guesses, a message is displayed informing the user that he or she has lost and the the number of losses increases by 1, If the player types the randomly generated letter before using up 9 guesses, a message is displayed telling the user that he or she has won and the number of wins increases by 1. After the player either wins or loses, the div with guessed letters is cleared, the number of guesses left is reset to 9, and a new random letter is chosen. The player can continue to play, with the program keeping track of the number of wins and losses. 
 
 ## Technology used
