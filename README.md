@@ -13,7 +13,6 @@ First, a random letter is generated. The user types guesses on the keyboard, the
 ## Technology used
 * HTML
 * CSS
-* CSS Boostrap
 * JavaScript
 
 
